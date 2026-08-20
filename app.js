@@ -136,8 +136,10 @@ async function toggleRecording() {
 
 function pickSupportedMimeType() {
   const candidates = [
-    "audio/webm",
+    "audio/mp4;codecs=mp4a.40.2",
     "audio/mp4",
+    "audio/webm;codecs=opus",
+    "audio/webm",
     "audio/ogg",
     "audio/aac",
   ];
@@ -184,7 +186,8 @@ async function startRecording() {
       studentAudioUrl = URL.createObjectURL(blob);
       studentTrack.src = studentAudioUrl;
       studentTrack.load();
-      recStatusEl.textContent = "已完成，往下滑到 Step 3 比較";
+      const kb = (blob.size / 1024).toFixed(1);
+      recStatusEl.textContent = `已完成（${actualType}, ${kb}KB），往下滑到 Step 3 比較`;
     };
 
     // Safari 的 MediaRecorder 如果不給 timeslice，錄出來的 audio/mp4 常常
