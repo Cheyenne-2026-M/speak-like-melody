@@ -181,7 +181,11 @@ async function startRecording() {
       studentTrack.src = studentAudioUrl;
       studentTrack.load();
       const kb = (blob.size / 1024).toFixed(1);
-      recStatusEl.textContent = `已完成（${actualType}, ${kb}KB），往下滑到 Step 3 比較`;
+      const track = stream.getAudioTracks()[0];
+      const trackInfo = track
+        ? `track: muted=${track.muted} enabled=${track.enabled} readyState=${track.readyState}`
+        : "no audio track";
+      recStatusEl.textContent = `已完成（${actualType}, ${kb}KB, ${trackInfo}），往下滑到 Step 3 比較`;
     };
 
     // Safari 的 MediaRecorder 如果不給 timeslice，錄出來的 audio/mp4 常常
