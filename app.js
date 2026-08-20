@@ -49,9 +49,9 @@ async function init() {
     teacherPlayStatusEl.textContent = "";
   });
 
-  // 一進頁面就先跟系統要麥克風權限、把串流開好，
-  // 這樣使用者第一次按「開始錄音」時就不用臨時協商，才不會延遲吃字
-  getMicStream().catch(() => {});
+  // 麥克風串流改成只在使用者點擊「開始錄音」時才要（見 startRecording）。
+  // 原本想在載入時就先暖機，但 Safari 對非使用者手勢觸發的
+  // getUserMedia 會給一個表面正常、實際不收音的串流，錄出來永遠是空的。
 }
 
 function formatSentenceForWrap(text) {
