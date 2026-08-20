@@ -187,7 +187,10 @@ async function startRecording() {
       recStatusEl.textContent = "已完成，往下滑到 Step 3 比較";
     };
 
-    mediaRecorder.start();
+    // Safari 的 MediaRecorder 如果不給 timeslice，錄出來的 audio/mp4 常常
+    // moov 資訊不完整，導致該瀏覽器自己讀回時顯示無聲或時長跑掉，
+    // 定期切塊可以強迫寫入正確的時長/軌道資訊
+    mediaRecorder.start(250);
     isRecording = true;
 
     // 錄音其實已經開始跑了，但故意晚 0.3 秒才顯示「請開始說話」，
