@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "text": "Could you point me to the nearest convenience store?",
+    "audio": "audio/sentence1.mp3",
+    "tips": [
+      "「Could you」為連音（Linking）現象：字尾 /d/ 與 you 的 /j/ 融合成 /dʒ/，唸作 /kʊdʒə/ 會更道地",
+      "convenience 為多音節重音字：第一音節 con 為非重讀弱化音節，主要重音落在第二音節 vi，唸作 /kənˈviːniəns/",
+      "此句為一般疑問句，句尾應以上揚語調（Rising Intonation）收尾"
+    ]
+  },
+  {
+    "id": 2,
+    "text": "That's so sweet of you to say.",
+    "audio": "audio/sentence2.mp3",
+    "tips": [
+      "of you 常見連音（Linking）與弱化：of 弱化為 /əv/ 並與 you 融合，唸作 /əv jə/，聽起來像 of-ya",
+      "全句核心重音（Stress）落在 sweet：作為稱讚語意的關鍵字，需以重音凸顯情感",
+      "此句為直述句（Statement），非疑問句，句尾應以下降語調（Falling Intonation）收尾，與疑問句的上揚語調相反"
+    ]
+  }
+]

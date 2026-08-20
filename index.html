@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>Practice with Melody</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <span class="quote-mark">&ldquo;</span>
+    <h1 class="hero-title">Practice with <em>Melody</em></h1>
+  </header>
+
+  <main class="wrap">
+    <p class="progress" id="progress">句子 1 / 1</p>
+
+    <div class="steps-row">
+      <section class="step-card">
+        <div class="step-label"><span class="step-num">Step 1</span>Melody 老師示範</div>
+        <p class="sentence" id="sentence-text-1">載入中...</p>
+        <div class="row">
+          <button id="play-teacher" class="btn btn-dark">▶ 播放老師錄音</button>
+          <span id="teacher-play-status" class="play-status"></span>
+        </div>
+        <ul class="tips" id="tips-list"></ul>
+      </section>
+
+      <section class="step-card">
+        <div class="step-label"><span class="step-num">Step 2</span>換你試試看</div>
+        <p class="sentence" id="sentence-text-2">載入中...</p>
+        <div class="row">
+          <button id="record-btn" class="btn btn-outline">🎙 開始錄音</button>
+          <span id="rec-status"></span>
+        </div>
+      </section>
+
+      <section class="step-card">
+        <div class="step-label"><span class="step-num">Step 3</span>比較差異</div>
+        <div class="track">
+          <span class="track-label">Melody 老師</span>
+          <audio id="teacher-track" controls></audio>
+        </div>
+        <div class="track">
+          <span class="track-label">你的錄音</span>
+          <audio id="student-track" controls></audio>
+        </div>
+        <p class="hint">比較老師的錄音和你的錄音，比較發音、語調、節奏差在哪裡。</p>
+      </section>
+    </div>
+
+    <div class="nav">
+      <button id="prev-btn" class="btn btn-text">← 上一句</button>
+      <button id="next-btn" class="btn btn-text">下一句 →</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

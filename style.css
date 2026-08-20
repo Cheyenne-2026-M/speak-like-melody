@@ -1,0 +1,257 @@
+* { box-sizing: border-box; }
+
+:root {
+  --ink: #2a241e;
+  --muted: #8c8275;
+  --cream: #fbf7f1;
+  --card: #ffffff;
+  --border: #e8e1d6;
+  --accent: #d98b4a;
+  --accent-dark: #b96f34;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cream);
+  font-family: "Noto Sans TC", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: var(--ink);
+}
+
+.hero {
+  text-align: center;
+  padding: 56px 24px 40px;
+  background:
+    linear-gradient(180deg, rgba(42,36,30,0.75), rgba(42,36,30,0.55)),
+    linear-gradient(120deg, #4a4038, #2a241e 70%);
+  color: #fff;
+}
+
+.quote-mark {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 40px;
+  margin: 8px 0 6px;
+  letter-spacing: 0.01em;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  margin: 0;
+  font-size: 14px;
+  color: #e6ddd0;
+  letter-spacing: 0.04em;
+}
+
+.wrap {
+  width: 94vw;
+  max-width: 1680px;
+  margin: -28px auto 60px;
+  padding: 0 20px;
+}
+
+.progress {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 16px;
+}
+
+.steps-row {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+}
+
+.step-card {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(42, 36, 30, 0.08);
+  padding: 24px 20px;
+}
+
+@media (max-width: 900px) {
+  .steps-row {
+    flex-direction: column;
+  }
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-num {
+  background: var(--ink);
+  color: var(--accent);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+}
+
+.sentence {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+  color: var(--ink);
+  overflow-wrap: normal;
+}
+
+.tips {
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  background: #faf3ea;
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  list-style: none;
+  text-align: left;
+}
+
+.tips li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.tips li:last-child {
+  margin-bottom: 0;
+}
+
+.tips li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--accent);
+}
+
+.btn-dark:hover:not(:disabled) {
+  background: #3a332a;
+}
+
+.btn-outline {
+  background: #fff;
+  color: var(--accent-dark);
+  border: 2px solid var(--accent);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #faf3ea;
+}
+
+.btn-outline.recording {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 14px;
+  font-weight: 600;
+}
+
+.btn-text:hover:not(:disabled) {
+  color: var(--accent-dark);
+}
+
+#rec-status {
+  font-size: 14px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.play-status {
+  font-size: 14px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.track-label {
+  flex: 0 0 78px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.track audio {
+  flex: 1;
+  height: 36px;
+  accent-color: var(--accent);
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
