@@ -150,15 +150,9 @@ function pickSupportedMimeType() {
 
 async function getMicStream() {
   if (!cachedStream) {
-    // 開啟基本降噪與自動增益（避免錄音音量比老師的音檔小很多），
-    // 只關掉回音消除，這個對單人錄音沒幫助，反而可能讓聲音變悶
-    cachedStream = await navigator.mediaDevices.getUserMedia({
-      audio: {
-        echoCancellation: false,
-        noiseSuppression: true,
-        autoGainControl: true,
-      },
-    });
+    // Safari 對自訂音訊約束（echoCancellation/noiseSuppression/autoGainControl）
+    // 處理有問題，會給一個表面正常但完全無聲的音軌，改成不加任何約束
+    cachedStream = await navigator.mediaDevices.getUserMedia({ audio: true });
   }
   return cachedStream;
 }
